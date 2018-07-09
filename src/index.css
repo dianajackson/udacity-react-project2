@@ -1,0 +1,317 @@
+html,body {
+	min-height: 100%;  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.alignRight {
+	justify-content: flex-end;  
+}
+
+.avatar {
+	width: 80% !important;  
+  	height: 150px !important;
+  	border: 2px solid #FFCC00;
+  	margin: 0 auto;
+}
+
+.avatarCard {
+	min-width: 200px;
+  	width: 30%;
+}
+
+.avatarCard div,
+.pollCard div{
+	padding: 0  
+}
+
+.avatarCardHeader, 
+.cardHeader {
+	margin-bottom: 20px;  
+}
+
+.avatarCardTitle,
+.cardTitle {
+  	font-size: 1.3em;
+  	font-weight: bold;  
+    padding: 10px !important;
+	text-transform: uppercase;
+}
+
+.avatarCard .avatarCardTitle {
+  	background-color: black;
+  	color: white;
+}
+
+.avatarCard .avatarCardSubtitle,
+.pollCard .avatarCardSubtitle {
+  	font-size: .9em;
+  	font-weight: bold;
+  	background-color: #FFCC00;
+  	color: black;
+  	padding: 6px 2px;
+  	border-bottom: 2px solid black;
+}
+
+.cardFooter {
+	border-top: 1px solid #CCC;
+  	margin: 20px auto 0 auto;
+  	padding: 10px 0;
+  	justify-content: center;
+  	width: 100%;
+  	background-color: #EEEEEE;
+}
+
+.castVoteLink {
+	margin-right: 16px;  
+}
+
+.contentPanel {
+	width: 65%; 
+  	display: flex;
+  	flex-direction: column;
+    height: 100%;
+}
+
+.contentPanel > div {
+	flex: 1;  
+}
+
+.dashboardTabs button{
+	max-width: 50%;  
+}
+
+.displayInline {
+	display: inline-block;  
+}
+
+.errorMessage {
+    margin-top: 10px;
+	position: relative !important;  
+}
+
+.errorMessage div {
+	background-color: red;  
+}
+
+.hidden {
+	display: none;  
+}
+
+.midMarginRight {
+	margin-right: 10px !important;  
+}
+
+.orClause {
+	margin: 0 4px;
+  	font-style: normal;
+  	font-size: 1.3em;
+  	text-transform: uppercase;
+  	color: #AAA;
+}
+
+.pollContainer {
+	display: flex;
+  	flex: 1;
+  	justify-content: space-between;
+}
+
+.pollCard {
+	width: 60%;  
+}
+
+.pollCard .cardHeader {
+	width: 80%;
+  	margin: 20px auto;
+  	border: 2px solid black;
+  	padding: 10px;
+}
+
+.pollCard .cardTitle {
+  	background-color: white;
+  	color: black;
+}
+
+.pollCard .cardSubtitle {
+  	font-size: 1.1em;
+  	font-weight: bold;
+  	background-color: white;
+  	color: black;
+  	padding: 4px;
+}
+
+.pollCard div[class^="MuiCardContent-root-"] {
+    padding-bottom: 0;
+}
+
+.pollError {
+	width: 80%;  
+  	font-size: 4vw;
+  	text-align: center;
+  	margin: 0 auto;
+  	text-transform: uppercase;
+}
+
+.poll {
+	padding: 10px;  
+}
+
+.pollError i {
+	font-size: 20vw;  
+}
+
+.question.optionOne {
+  	color: red;
+}
+
+.question.optionTwo {
+	color: green  
+}
+
+.question.pollView {
+	display: block;  
+}
+
+.questionOptionBoxes {
+	display: flex;
+  	min-height: 100px;
+}
+
+.questionOptionBoxes .optionOne {
+	background-color: red  
+}
+
+.questionOptionBoxes .optionTwo {
+	background-color: green  
+}
+
+.questionOptionBoxes.pollView {
+	display: block;  
+}
+
+.questionOptionBoxes > div {
+	flex-grow: 1;
+    flex-basis: 0; 
+  	color: white;
+  	padding: 20px;
+}
+
+.questionOptionBoxes .optionText {
+	font-weight: bold;
+  	font-style: italic;
+}
+
+.questionOptionBoxes .votingPercentage {
+	font-size: 4em;  
+}
+
+.questionOptionBoxes .wouldRatherClause {
+  	font-weight: bold;
+  	font-style: italic
+}
+
+.questionOptionBoxes .youClause {
+ 	text-transform: uppercase;
+  	text-decoration: underline;
+  	font-weight: bold;
+}
+
+.red {
+ 	color: red; 
+}
+
+.votingButton {
+	background-color: #EEEEEE !important;  
+  	margin-bottom: 10px !important;
+  	padding: 6px 10px !important;
+  	font-size: .8em;
+}
+
+.votingContainer {
+	border-bottom: 1px dotted #EEE;
+  	margin-bottom: 10px;
+  	padding-bottom: 10px;
+}
+
+span.question {
+	font-weight: bold;  
+  	text-transform: capitalize;
+}
+
+#appContainer {
+  	margin: 50px auto 0 auto;
+  	width: 75%;
+  	min-height: 300px;
+  	height: 50%;
+  	text-align: center;
+	background-color: #EFEFEF;
+}
+
+#loginImage {
+ 	min-height: 200px;
+  	width: 80%;
+  	border: 5px solid black;
+  	margin: 0 auto;
+}
+
+#loginScreen {
+    display: flex;
+  	align-items: center;
+  	justify-content: center; 
+  	flex-direction: column;
+}
+
+#navigation {
+  flex: 1;
+}
+
+#navigation a {
+ 	text-decoration: none; 
+}
+
+#navigation a:not(:last-of-type) {
+	margin-right: 20px;  
+}
+
+a {
+	text-decoration: none;  
+}
+
+ol li {
+	text-align: left;  
+}
+
+small {
+	font-size: .7em;  
+  	color: #BBB;
+  	display: block;
+  	margin: 0px 0 10px 0;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
