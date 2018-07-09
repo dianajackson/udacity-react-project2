@@ -5,6 +5,7 @@ import {loadData} from "../actions/commonActions"
 import LoginScreen from "./LoginScreen"
 import Navigation from "./Navigation"
 import Dashboard from "./Dashboard"
+import Leaderboard from "./Leaderboard"
 import Poll from "./Poll"
 import Card from '@material-ui/core/Card';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -30,16 +31,14 @@ class App extends Component {
   
 	render() {
       	const dataLoaded = (this.props.dataLoadState)
-    	const currentUser = this.props.currentUser
+    	const {currentUser, users, questions} = this.props
       	var userFirstName
-      	var questions
       	var viewToDisplay
       
      	if (!dataLoaded || dataLoaded === "started") {
             viewToDisplay = (<Loader/>)
     	} else if (currentUser && currentUser !== "null") {
-        	userFirstName = util.getFirstName(this.props.users[currentUser])//currentUser ? this.props.users[currentUser].name.split(" ")[0] : ""
-        	questions = this.props.questions
+        	userFirstName = util.getFirstName(this.props.users[currentUser])
         } else {
            	viewToDisplay = (<LoginScreen users={this.props.users} userIds={this.props.userIds}/>)
         }
@@ -54,6 +53,7 @@ class App extends Component {
                                 <Route path="/" exact render={(props) => <Dashboard {...props} currentUser={currentUser} questions={this.props.questions}/>} />
                                 <Route path="/question/:questionId" render={(props) => <Poll {...props} questions={this.props.questions}/>}/>
                                 <Route path="/add" render={(props) => <Poll {...props} currentUser={currentUser} questions={this.props.questions} cardType="newPoll"/>}/>
+                                <Route path="/leaderboard" render={(props) => <Leaderboard {...props} currentUser={currentUser} users={users} questions={questions} cardType="leaderboard"/>}/>
                             </Switch>
                         </div> :
                         <div>
@@ -67,15 +67,7 @@ class App extends Component {
 }
 
 function mapStateToProps({users, currentUser, questions, dataLoadState}) {
-  	let localStorage_currentUser = localStorage.getItem("currentUser")
-	console.log("mapping state...")
-  
-    if (localStorage_currentUser && localStorage_currentUser !== "null") {
-    	console.log(".....a user is logged in...");  
-      	if (dataLoadState === "finished") {
-        	currentUser = localStorage.getItem("currentUser")  
-        }
-    }
+	console.log("...................................APP | mapping state...")
   
 	return {
       	currentUser: currentUser,

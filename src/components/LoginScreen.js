@@ -23,7 +23,7 @@ class LoginScreen extends Component {
 		var currentUserId = this.state.selectedUser
 
       	console.log(currentUserId + " just logged in");
-        localStorage.setItem("currentUser", currentUserId);
+        //localStorage.setItem("currentUser", currentUserId);
       	this.props.dispatch(setDataLoadState("finished"))
   		this.props.dispatch(setCurrentUser(currentUserId))	  
     }

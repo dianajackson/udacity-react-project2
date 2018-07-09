@@ -1,5 +1,6 @@
 import { _saveQuestionAnswer} from '../utils/_DATA.js'
 import { _saveQuestion} from '../utils/_DATA.js'
+import {updateUserAnswers, updateUserQuestions} from "./usersActions"
 
 export const ADD_QUESTION = "ADD_QUESTION"
 export const GET_QUESTIONS = "GET_QUESTIONS"
@@ -35,6 +36,8 @@ export function addQuestion(question) {
 export function handleCastVote(info) {
 	return(dispatch) => {
     	dispatch(castVote(info))  
+   		dispatch(updateUserAnswers(info))
+      
       	return _saveQuestionAnswer(info)
       		.catch((e) => {
           		console.warn("Error|handleCastVote: ", e)
@@ -49,6 +52,7 @@ export function handleAddQuestion(info) {
       	return _saveQuestion(info)
       		.then((savedQuestion) => {
           		dispatch(addQuestion(savedQuestion))
+             	dispatch(updateUserQuestions(savedQuestion))
         	}).catch((e) => {
           		console.warn("Error|handleAddQuestion: ", e)
           		dispatch(addQuestion(info))

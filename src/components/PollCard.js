@@ -1,11 +1,8 @@
 import React, {Component} from "react"
 import {handleCastVote} from "../actions/questionActions"
 import CardContent from '@material-ui/core/CardContent';
-import util from "../utils/common"
-import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import {PollQuestion} from "../utils/common"
-import { renderToString } from 'react-dom/server'
 import Button from '@material-ui/core/Button';
 import {connect} from "react-redux"
 
@@ -25,13 +22,11 @@ function CardHeader(props) {
 function QuestionOptions(props) {
   	const votingButtonText = "I Choose This One"
     let {question, totalUsers, currentUser, dispatch} = props
-    let youClause = ""
     var optionOneData, optionTwoData
     let userHasVoted = question.optionOne.votes.includes(currentUser) || question.optionTwo.votes.includes(currentUser)
   	let votingContainerClass = userHasVoted ? "votingContainer hidden" : "votingContainer"
     
     function setOptionData(data) {
-    	let optionData = {}
         let totalVoters = data.votes.length
         let currentUserVoted = false
         let wouldRatherClause = ""

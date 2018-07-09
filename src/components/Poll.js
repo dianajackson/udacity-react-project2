@@ -1,11 +1,5 @@
 import React, {Component} from "react"
-import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import {NavLink} from "react-router-dom"
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import {connect} from "react-redux"
 import AvatarCard from './AvatarCard';
 import PollCard from './PollCard';

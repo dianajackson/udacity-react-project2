@@ -11,7 +11,6 @@ import {PollQuestion} from "../utils/common"
 /** Functional Components **/
 function PollQuestionActionButtons(props) {
   	let question = props.question
-    let questionId = question.id
     let showVoteButton = props.showVoteButton || false
     let VoteButton = showVoteButton ? <Button variant="contained" size="small" color="secondary">CAST YOUR VOTE!</Button> : ""
     

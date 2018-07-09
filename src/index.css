@@ -57,6 +57,14 @@ body {
   	border-bottom: 2px solid black;
 }
 
+.badge span[class^="MuiBadge-badge-"] {
+	font-size: 2em;
+  	width: 1.5em;
+  	height: 1.5em;
+  	left: -.45em;
+  	top: -.75em;
+}
+
 .cardFooter {
 	border-top: 1px solid #CCC;
   	margin: 20px auto 0 auto;
@@ -99,7 +107,17 @@ body {
 }
 
 .hidden {
-	display: none;  
+	display: none !important;  
+}
+
+.leaderboardGrid {
+	display: flex;  
+  	cjustify-content: space-around;
+  	flex-wrap: wrap;
+}
+
+.leaderboardGrid .gridItem {
+	margin: 40px;  
 }
 
 .midMarginRight {

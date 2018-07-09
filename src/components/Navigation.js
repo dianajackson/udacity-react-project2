@@ -11,7 +11,6 @@ class Navigation extends Component {
   	logoutUser = (currentUser, history) => {
       	console.log(currentUser + "logged out");
   		this.props.dispatch(logoutUser())	
-      	localStorage.setItem("currentUser", null);
         this.props.history.push("/")
     }
   
@@ -27,7 +26,7 @@ class Navigation extends Component {
                         	<Button variant="contained" color="primary">{currentUser}'s Dashboard</Button>
                     	</NavLink>
 
-                    	<NavLink to='/' className="item">
+                    	<NavLink to='/leaderboard' className="item">
                         	<Button variant="contained" color="primary">Leaderboard</Button>
                     	</NavLink>
 

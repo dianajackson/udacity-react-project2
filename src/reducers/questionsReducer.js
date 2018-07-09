@@ -1,13 +1,22 @@
 import {GET_QUESTIONS, CAST_VOTE, ADD_QUESTION} from "../actions/questionActions"
-import { _saveQuestion} from '../utils/_DATA.js'
 
 export default function questions (state = {}, action) {
 	switch (action.type) {
       	case GET_QUESTIONS:
-        	return {
+        	let localStorage_questions = localStorage.getItem("questions")
+            var defaultQuestionSet
+            
+            if (localStorage_questions) {
+            	return JSON.parse(localStorage_questions)
+            } 
+        
+           defaultQuestionSet =  {
           		...state,
             	...action.questions
-        	}
+        	}  
+        
+            localStorage.setItem("questions", JSON.stringify(defaultQuestionSet))
+        	return defaultQuestionSet
         
       case CAST_VOTE:
         	let user = action.authedUser
@@ -16,6 +25,7 @@ export default function questions (state = {}, action) {
             let optionTwo = state[questionId].optionTwo
         	let optionOneVotes = state[action.qid].optionOne.votes
             let optionTwoVotes = state[action.qid].optionTwo.votes
+            var modifiedQuestions
             
             if (action.answer === "optionOne") {
               	optionOne.votes = optionOneVotes.concat(user)
@@ -23,7 +33,7 @@ export default function questions (state = {}, action) {
              	optionTwo.votes = optionTwoVotes.concat(user) 
             }
             
-        	return {
+        	modifiedQuestions = {
               	...state,
               	[action.qid] : {
                 	...state[action.qid],
@@ -32,13 +42,18 @@ export default function questions (state = {}, action) {
                 }
             }
         
+        	localStorage.setItem("questions", JSON.stringify(modifiedQuestions))
+        	return modifiedQuestions
+        
       case ADD_QUESTION:
       		const question = action.newQuestion
-            
-      		return {
+            let newQuestionSet = {
         		...state,
             	...question
        		}
+            
+            localStorage.setItem("questions", JSON.stringify(newQuestionSet))
+      		return newQuestionSet
     
       	default:
         	return state;
